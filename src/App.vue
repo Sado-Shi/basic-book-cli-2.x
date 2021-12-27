@@ -1,19 +1,51 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <img alt="Vue logo" src="./assets/logo.png" />
+    <HelloWorld msg="Welcome to Your Vue.js App" />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import HelloWorld from "./components/HelloWorld.vue";
 
 export default {
-  name: 'App',
+  name: "App",
+
   components: {
-    HelloWorld
-  }
+    HelloWorld,
+  },
+};
+
+const array = [1, 2, 3];
+// const newArray = array.map(el => {
+//   return el * 2
+// })
+const newArray = array.map((el) => ({ value: el * 2 }));
+console.log(newArray);
+// array.push(6, 7);
+// console.log(array);
+// array.length = [0];
+// console.log(array);
+const insert = "insert";
+const text = "string" + insert + 1;
+console.log(text);
+
+const ata = "省略";
+const bta = "記法";
+const newObject = { ata, bta };
+console.log(newObject);
+
+const [test, dayo] = [4, 6];
+console.log(test, dayo);
+
+const { id } = { id: 1, name: "りんご" };
+console.log(id);
+
+function testFunc({ id, name }) {
+  console.log(id);
+  console.log(name);
 }
+testFunc({ id: 1, name: 'apple' });
 </script>
 
 <style>
