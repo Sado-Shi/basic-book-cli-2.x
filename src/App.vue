@@ -1,56 +1,16 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/pokemon">Pokemon</router-link>
-      <!-- {{ username }} -->
+      <router-link to="/" exact>Home</router-link> |
+      <router-link to="/pokemon" replace>Pokemon</router-link>
     </div>
-    <router-view/>
+    <transition>
+      <router-view />
+    </transition>
   </div>
 </template>
 
-<script>
-
-// export default {
-//   name: "App",
-//   computed: {
-//     username() {
-//       return console.log(this.$route)
-//     }
-//   }
-// };
-
-const array = [1, 2, 3];
-// const newArray = array.map(el => {
-//   return el * 2
-// })
-const newArray = array.map(el => el * 2);
-console.log(newArray);
-// array.push(6, 7);
-// console.log(array);
-// array.length = [0];vue
-// console.log(array);
-// const insert = "insert";
-// const text = "string" + insert + 1;
-// console.log(text);
-
-// const ata = "省略";
-// const bta = "記法";
-// const newObject = { ata, bta };
-// console.log(newObject);
-
-// const [test, dayo] = [4, 6];
-// console.log(test, dayo);
-
-// const { id } = { id: 1, name: "りんご" };
-// console.log(id);
-
-// function testFunc({ id, name }) {
-//   console.log(id);
-//   console.log(name);
-// }
-// testFunc({ id: 1, name: 'apple' });
-</script>
+<script></script>
 
 <style>
 #app {
@@ -70,7 +30,19 @@ console.log(newArray);
   color: #2c3e50;
 }
 
-#nav a.router-link-exact-active {
+#nav a.router-link-active {
   color: #42b983;
+}
+
+.view-enter-active, .view-leave-active {
+  transition: opacity 0.5s;
+}
+
+.view-leave-active {
+  position: absolute;
+}
+
+.view-enter, .view-leave-to {
+  opacity: 0;
 }
 </style>

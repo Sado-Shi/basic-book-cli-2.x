@@ -1,17 +1,16 @@
 <template>
-  <div class="about">
-    <h1>このページはPokemonページ</h1>
-    {{ username }}
+  <div>
+    <PokemonItem pokemonMessage="ポケモンの詳細情報" />
   </div>
 </template>
 
 <script>
+import PokemonItem from "@/components/PokemonItem.vue";
+
 export default {
-  name: "App",
-  computed: {
-    username() {
-      return console.log(this.$route)
-    }
-  }
-};
+  name: 'Pokemon',
+  components: {
+    PokemonItem
+  },
+}
 </script>
